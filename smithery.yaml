@@ -1,0 +1,10 @@
+name: flashcard-ai-mcp
+description: "MEOK AI Labs — flashcard-ai-mcp — Create and review flashcards for learning."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/flashcard-ai-mcp
+license: MIT
+categories: [Education, Learning]
+tags: [flashcards, spaced-repetition, study-tools, learning, memorization]
+runtime: python
+entrypoint: server.py
