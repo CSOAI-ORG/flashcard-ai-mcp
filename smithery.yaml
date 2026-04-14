@@ -1,10 +1,37 @@
 name: flashcard-ai-mcp
-description: "MEOK AI Labs — flashcard-ai-mcp — Create and review flashcards for learning."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/flashcard-ai-mcp
-license: MIT
-categories: [Education, Learning]
-tags: [flashcards, spaced-repetition, study-tools, learning, memorization]
-runtime: python
-entrypoint: server.py
+description: "flashcard-ai-mcp \u2014 Create and review flashcards for learning."
+version: 1.0.0
+tools:
+- name: generate_flashcards
+  description: MEOK AI Labs tool.
+  parameters:
+  - name: text
+    type: string
+    required: true
+  - name: count
+    type: integer
+    required: false
+- name: quiz_me
+  description: MEOK AI Labs tool.
+  parameters:
+  - name: topic
+    type: string
+    required: true
+  - name: difficulty
+    type: string
+    required: false
+- name: spaced_repetition
+  description: MEOK AI Labs tool.
+  parameters:
+  - name: cards
+    type: string
+    required: true
+  - name: performance
+    type: string
+    required: false
+- name: export_anki
+  description: MEOK AI Labs tool.
+  parameters:
+  - name: flashcards
+    type: string
+    required: true

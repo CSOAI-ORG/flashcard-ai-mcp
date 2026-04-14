@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Create study flashcards from text. — MEOK AI Labs."""
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import json, os, re, hashlib, math, random, string, time
 from datetime import datetime, timezone
 from typing import Optional
@@ -18,48 +23,64 @@ mcp = FastMCP("flashcard-ai", instructions="MEOK AI Labs — Create study flashc
 
 
 @mcp.tool()
-def generate_flashcards(text: str, count: int = 5) -> str:
+def generate_flashcards(text: str, count: int = 5, api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "generate_flashcards", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def quiz_me(topic: str, difficulty: str = 'medium') -> str:
+def quiz_me(topic: str, difficulty: str = 'medium', api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "quiz_me", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def spaced_repetition(cards: str, performance: str = '') -> str:
+def spaced_repetition(cards: str, performance: str = '', api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "spaced_repetition", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 @mcp.tool()
-def export_anki(flashcards: str) -> str:
+def export_anki(flashcards: str, api_key: str = "") -> str:
     """MEOK AI Labs tool."""
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if err := _rl(): return err
     result = {"tool": "export_anki", "timestamp": datetime.now(timezone.utc).isoformat()}
     # Process input
     local_vars = {k: v for k, v in locals().items() if k not in ('result',)}
     result["input"] = str(local_vars)[:200]
     result["status"] = "processed"
-    return json.dumps(result, indent=2)
+    return result
 
 
 if __name__ == "__main__":

@@ -1,20 +1,76 @@
 {
   "name": "flashcard-ai-mcp",
-  "description": "MEOK AI Labs \u2014 flashcard-ai-mcp \u2014 Create and review flashcards for learning.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/flashcard-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "flashcard-ai-mcp \u2014 Create and review flashcards for learning.",
+  "version": "1.0.0",
   "tools": [
-    "run"
-  ],
-  "categories": [
-    "Education",
-    "Learning"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "generate_flashcards",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "quiz_me",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "topic": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "topic"
+        ]
+      }
+    },
+    {
+      "name": "spaced_repetition",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "cards": {
+            "type": "string"
+          },
+          "performance": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "cards"
+        ]
+      }
+    },
+    {
+      "name": "export_anki",
+      "description": "MEOK AI Labs tool.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "flashcards": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "flashcards"
+        ]
+      }
+    }
+  ]
 }
