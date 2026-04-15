@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 [project]
 name = "flashcard-ai-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — flashcard-ai-mcp"
+description = "AI-powered flashcard ai MCP server for agents. Supports generate flashcards, quiz me, spaced repetition. By MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]

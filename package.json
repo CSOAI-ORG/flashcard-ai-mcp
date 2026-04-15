@@ -1,1 +1,11 @@
-{"name":"flashcard-ai-mcp","version":"1.0.0","description":"MEOK AI Labs MCP","author":"MEOK AI Labs","license":"MIT","repository":{"type":"git","url":"https://github.com/CSOAI-ORG/flashcard-ai-mcp"}}
+{
+  "name": "flashcard-ai-mcp",
+  "version": "1.0.0",
+  "description": "AI-powered flashcard ai MCP server for agents. Supports generate flashcards, quiz me, spaced repetition. By MEOK AI Labs.",
+  "author": "MEOK AI Labs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/flashcard-ai-mcp"
+  }
+}

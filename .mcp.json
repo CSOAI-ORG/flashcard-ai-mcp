@@ -1,6 +1,6 @@
 {
   "name": "flashcard-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 MEOK AI Labs \u2014 Create study flashcards from text.",
+  "description": "AI-powered flashcard ai MCP server for agents. Supports generate flashcards, quiz me, spaced repetition. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
