@@ -1,0 +1,53 @@
+{
+  "name": "flashcard-ai",
+  "description": "Create study flashcards, run quiz sessions, and track learning progress. By MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/flashcard-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "create_deck",
+      "description": "Create a new flashcard deck. Optionally provide initial cards as JSON array of {front, back} objects."
+    },
+    {
+      "name": "add_card",
+      "description": "Add a flashcard to an existing deck. Creates the deck if it doesn't exist."
+    },
+    {
+      "name": "quiz_session",
+      "description": "Start a quiz session from a deck. Modes: standard (front->back), reverse (back->front), mixed. Returns cards due for review with SM-2 scheduling."
+    },
+    {
+      "name": "get_stats",
+      "description": "Get deck statistics and optionally record quiz results. Results format: JSON array of {card_id, rating} where rating is 0-5 (SM-2 scale)."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Education & Research"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
