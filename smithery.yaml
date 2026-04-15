@@ -1,5 +1,5 @@
 name: flashcard-ai-mcp
-description: "flashcard-ai-mcp \u2014 Create and review flashcards for learning."
+description: "MEOK AI Labs \u2014 Create study flashcards from text."
 version: 1.0.0
 tools:
 - name: generate_flashcards
