@@ -1,71 +1,38 @@
-# Flashcard Ai
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — Create study flashcards, run quiz sessions, and track learning progress. By MEOK AI Labs.
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/flashcard-ai-mcp)](https://github.com/CSOAI-ORG/flashcard-ai-mcp/stargazers)
 
-Create study flashcards, run quiz sessions, and track learning with spaced repetition. — MEOK AI Labs.
+# uflashcardU aiU mcp
+
+**Create study flashcards, run quiz sessions, and track learning with spaced repetition. — MEOK AI Labs.**
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/flashcard-ai-mcp)](https://www.npmjs.com/package/@meok-ai/flashcard-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/flashcard-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install flashcard-ai-mcp
+# or
+npm install -g @meok-ai/flashcard-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-# Run standalone
-python server.py
+See the project repository for full documentation and examples.
 
-# Or via MCP
-mcp install flashcard-ai-mcp
-```
+## Enterprise Support
 
-## Tools
-
-### `create_deck`
-Create a new flashcard deck. Optionally provide initial cards as JSON array of {front, back} objects.
-
-**Parameters:**
-- `name` (str)
-- `description` (str)
-- `cards_json` (str)
-
-### `add_card`
-Add a flashcard to an existing deck. Creates the deck if it doesn't exist.
-
-**Parameters:**
-- `deck_name` (str)
-- `front` (str)
-- `back` (str)
-- `tags` (str)
-- `hint` (str)
-
-### `quiz_session`
-Start a quiz session from a deck. Modes: standard (front->back), reverse (back->front), mixed. Returns cards due for review with SM-2 scheduling.
-
-**Parameters:**
-- `deck_name` (str)
-- `count` (int)
-- `mode` (str)
-
-### `get_stats`
-Get deck statistics and optionally record quiz results. Results format: JSON array of {card_id, rating} where rating is 0-5 (SM-2 scale).
-
-**Parameters:**
-- `deck_name` (str)
-- `record_results` (str)
-
-
-## Authentication
-
-Free tier: 15 calls/day. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
-
-## Links
-
-- **Website**: [meok.ai](https://meok.ai)
-- **GitHub**: [CSOAI-ORG/flashcard-ai-mcp](https://github.com/CSOAI-ORG/flashcard-ai-mcp)
-- **PyPI**: [pypi.org/project/flashcard-ai-mcp](https://pypi.org/project/flashcard-ai-mcp/)
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
