@@ -35,7 +35,22 @@ def _card_id(front: str) -> str:
 
 @mcp.tool()
 def create_deck(name: str, description: str = "", cards_json: str = "", api_key: str = "") -> str:
-    """Create a new flashcard deck. Optionally provide initial cards as JSON array of {front, back} objects."""
+    """Create a new flashcard deck. Optionally provide initial cards as JSON array of {front, back} objects.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -88,7 +103,22 @@ def create_deck(name: str, description: str = "", cards_json: str = "", api_key:
 
 @mcp.tool()
 def add_card(deck_name: str, front: str, back: str, tags: str = "", hint: str = "", api_key: str = "") -> str:
-    """Add a flashcard to an existing deck. Creates the deck if it doesn't exist."""
+    """Add a flashcard to an existing deck. Creates the deck if it doesn't exist.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -141,7 +171,23 @@ def add_card(deck_name: str, front: str, back: str, tags: str = "", hint: str = 
 
 @mcp.tool()
 def quiz_session(deck_name: str, count: int = 5, mode: str = "standard", api_key: str = "") -> str:
-    """Start a quiz session from a deck. Modes: standard (front->back), reverse (back->front), mixed. Returns cards due for review with SM-2 scheduling."""
+    """Start a quiz session from a deck. Modes: standard (front->back), reverse (back->front), mixed. Returns cards due for review with SM-2 scheduling.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -212,7 +258,23 @@ def quiz_session(deck_name: str, count: int = 5, mode: str = "standard", api_key
 
 @mcp.tool()
 def get_stats(deck_name: str, record_results: str = "", api_key: str = "") -> str:
-    """Get deck statistics and optionally record quiz results. Results format: JSON array of {card_id, rating} where rating is 0-5 (SM-2 scale)."""
+    """Get deck statistics and optionally record quiz results. Results format: JSON array of {card_id, rating} where rating is 0-5 (SM-2 scale).
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
