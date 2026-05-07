@@ -50,6 +50,13 @@ def create_deck(name: str, description: str = "", cards_json: str = "", api_key:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        name (str): The name to analyze or process.
+        description (str): The description to analyze or process.
+        cards_json (str): The cards json to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -132,6 +139,15 @@ def add_card(deck_name: str, front: str, back: str, tags: str = "", hint: str = 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        deck_name (str): The deck name to analyze or process.
+        front (str): The front to analyze or process.
+        back (str): The back to analyze or process.
+        tags (str): The tags to analyze or process.
+        hint (str): The hint to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -215,6 +231,13 @@ def quiz_session(deck_name: str, count: int = 5, mode: str = "standard", api_key
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        deck_name (str): The deck name to analyze or process.
+        count (int): The count to analyze or process.
+        mode (str): The mode to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -316,6 +339,12 @@ def get_stats(deck_name: str, record_results: str = "", api_key: str = "") -> st
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        deck_name (str): The deck name to analyze or process.
+        record_results (str): The record results to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
