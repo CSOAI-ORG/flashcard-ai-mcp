@@ -1,0 +1,33 @@
+# flashcard-ai-mcp
+# **MCP server for flashcard ai mcp operations**
+
+## Install
+```bash
+pip install flashcard-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `create_deck`
+Create a new flashcard deck. Optionally provide initial cards as JSON array of {front, back} objects.
+
+### `add_card`
+Add a flashcard to an existing deck. Creates the deck if it doesn't exist.
+
+### `quiz_session`
+Start a quiz session from a deck. Modes: standard (front->back), reverse (back->front), mixed. Returns cards due for review with SM-2 scheduling.
+
+### `get_stats`
+Get deck statistics and optionally record quiz results. Results format: JSON array of {card_id, rating} where rating is 0-5 (SM-2 scale).
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

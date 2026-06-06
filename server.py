@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Create study flashcards, run quiz sessions, and track learning with spaced repetition. — MEOK AI Labs."""
+"""
+Create study flashcards, run quiz sessions, and track learning with spaced repetition. — MEOK AI Labs."""
 
 import sys, os
-sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
 from auth_middleware import check_access
 
 import json, re, hashlib, math, random
@@ -74,7 +74,7 @@ def create_deck(name: str, description: str = "", cards_json: str = "", api_key:
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl():
         return err
 
@@ -165,7 +165,7 @@ def add_card(deck_name: str, front: str, back: str, tags: str = "", hint: str = 
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl():
         return err
 
@@ -255,7 +255,7 @@ def quiz_session(deck_name: str, count: int = 5, mode: str = "standard", api_key
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl():
         return err
 
@@ -362,7 +362,7 @@ def get_stats(deck_name: str, record_results: str = "", api_key: str = "") -> st
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
-        return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
+        return json.dumps({"error": msg, "upgrade_url": "https://councilof.ai"})
     if err := _rl():
         return err
 
@@ -432,5 +432,8 @@ def get_stats(deck_name: str, record_results: str = "", api_key: str = "") -> st
     })
 
 
-if __name__ == "__main__":
+def main():
     mcp.run()
+
+if __name__ == '__main__':
+    main()

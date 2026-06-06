@@ -1,0 +1,9 @@
+# flashcard-ai-mcp - Auto-trigger Rules
+
+When the user asks about flashcard, use flashcard-ai-mcp tools: create_deck, add_card, quiz_session, get_stats
+
+**MCP server for flashcard ai mcp operations**
+
+Install: `pip install flashcard-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

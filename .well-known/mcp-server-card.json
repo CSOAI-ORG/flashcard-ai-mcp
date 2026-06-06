@@ -1,0 +1,25 @@
+{
+  "name": "flashcard-ai-mcp",
+  "title": "Flashcard Ai Mcp",
+  "description": "AI-powered flashcard ai MCP server for agents. Supports generate flashcards, quiz me, spaced repetition. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "create_deck"
+    },
+    {
+      "name": "add_card"
+    },
+    {
+      "name": "quiz_session"
+    },
+    {
+      "name": "get_stats"
+    }
+  ]
+}
