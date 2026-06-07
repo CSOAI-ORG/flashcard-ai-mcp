@@ -1,0 +1,22 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "flashcard-ai-mcp",
+    "description": "Flashcard Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "flashcard-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "create_deck",
+      "add_card",
+      "quiz_session",
+      "get_stats"
+    ]
+  }
+}
