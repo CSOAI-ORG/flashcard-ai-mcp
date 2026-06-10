@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "flashcard-ai-mcp"
-version = "1.0.6"
+version = "1.0.9"
 readme = "README.md"
 description = "AI-powered flashcard ai MCP server for agents. Supports generate flashcards, quiz me, spaced repetition. By MEOK AI Labs."
 license = {file = "LICENSE"}
